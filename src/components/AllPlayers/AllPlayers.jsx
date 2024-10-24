@@ -26,6 +26,10 @@ const AllPlayers = ({choosePlayerBtn,seclectedPlayer}) => {
     setConditionDisplay(false);  
    }
 
+   const addMoreBtn=()=>{
+    setConditionDisplay(true);
+   }
+
     return (
         <div className="px-3 lg:px-16 ">
             <div className="flex bg-navBg backdrop-blur-md justify-between items-center sticky top-[110px] right-0  py-4">
@@ -59,7 +63,10 @@ const AllPlayers = ({choosePlayerBtn,seclectedPlayer}) => {
                        } 
                     </div>: 
                     <div className="">
-                       <SelectedPlayer  ></SelectedPlayer>
+                       <SelectedPlayer  
+                        seclectedPlayer={seclectedPlayer}
+                        addMoreBtn={addMoreBtn}
+                       ></SelectedPlayer>
                     </div>
                     }
                     

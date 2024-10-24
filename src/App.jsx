@@ -18,8 +18,8 @@ const increaseCoin =()=>{
 
 const choosePlayerBtn=(item)=>{
   const isInclude = seclectedPlayer.find((x=> x.playerId === item.playerId));
-  if(seclectedPlayer.length>3){
-    toast.error("maximum player added")
+  if(seclectedPlayer.length>5){
+    toast.error("You Reached Your Maximum-Limits Can't Added Anymore! ")
     return
   }
 

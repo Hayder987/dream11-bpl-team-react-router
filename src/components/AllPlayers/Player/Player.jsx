@@ -8,9 +8,9 @@ const Player = ({eachPlayer,choosePlayerBtn}) => {
     } = eachPlayer;
 
     return (
-        <div className='border-2 p-4 rounded-xl'>
+        <div className='border-2 p-4 rounded-xl mb-12'>
             <div className="mb-3">
-                <img src={image} alt="" className="h-[280px] w-full rounded-lg" />
+                <img src={image} alt="" className="h-[280px] w-full object-cover rounded-lg" />
             </div>
             <div className="border-b pb-3">
                <div className="flex gap-4  items-center">

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Player from "./Player/Player";
+import SelectedPlayer from "./SelectedPlayer/SelectedPlayer";
 
 
 
 const AllPlayers = () => {
  
-    const[Players, setPlayers] = useState([]);
+    const [Players, setPlayers] = useState([]);
+    const [conditionDisplay, setConditionDisplay] = useState(true);
 
     useEffect(()=>{
         const fetchData= async()=>{
@@ -15,20 +17,51 @@ const AllPlayers = () => {
         }
         fetchData()
     },[])
+   const allPlayerBtnHanderllar =()=>{
+    setConditionDisplay(true);  
+   }
 
-    console.log(Players)
+   const selectPlayerBtnHanderllar =()=>{
+    setConditionDisplay(false);  
+   }
 
     return (
         <div className="px-3 lg:px-16">
             <div className="flex justify-between items-center py-4">
-                <h1 className="text-xl md:text-3xl font-bold">Available Players</h1>
+                <h1 className="text-base md:text-3xl font-bold">
+                    {conditionDisplay?"Available Players":"Selected Player (0/6)"}
+                    </h1>
                 <div className="flex gap-3">
-                    <button className="border py-3 px-5 rounded-xl font-bold">Available</button>
-                    <button className="border py-3 px-5 rounded-xl font-bold">Selected (0)</button>
+                    <button onClick={allPlayerBtnHanderllar} 
+                     className={`border py-3 px-5 rounded-xl font-bold 
+                     ${conditionDisplay?"bg-btnBg":"bg-white"}`}>
+                        Available
+                    </button>
+                    <button onClick={selectPlayerBtnHanderllar}
+                         className={`border py-3 px-5 rounded-xl font-bold 
+                         ${!conditionDisplay?"bg-btnBg":"bg-white"}`}>
+                          Selected (0)
+                    </button>
                 </div>
             </div>
-            <div className="">
-                <Player></Player>
+            <div className="mt-6">
+                
+                <div className=" ">
+                    {conditionDisplay?
+                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        {
+                         Players.map((eachPlayer=> <Player 
+                            key={eachPlayer.playerId}
+                            eachPlayer={eachPlayer}></Player>))    
+                       } 
+                    </div>: 
+                    <div className="">
+                       <SelectedPlayer></SelectedPlayer>
+                    </div>
+                    }
+                    
+                </div>
+                
             </div>
             
         </div>

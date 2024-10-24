@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { ImBin } from "react-icons/im";
 
-const SelectedPlayer = ({seclectedPlayer,addMoreBtn}) => {
+const SelectedPlayer = ({seclectedPlayer,addMoreBtn, deleteSelectedPlayer}) => {
     return (
         <div className="px-3 lg:px-16 flex gap-4 flex-col">
           {
@@ -18,7 +18,7 @@ const SelectedPlayer = ({seclectedPlayer,addMoreBtn}) => {
                     </div>
                    </div>
                    <div className="">
-                    <button className="text-2xl text-red-500"><ImBin /></button>
+                    <button onClick={()=> deleteSelectedPlayer(player)} className="text-2xl text-red-500"><ImBin /></button>
                    </div>
                 </div>
             ))
@@ -36,7 +36,8 @@ const SelectedPlayer = ({seclectedPlayer,addMoreBtn}) => {
 
 SelectedPlayer.propTypes={
     seclectedPlayer: PropTypes.object.isRequired,
-    addMoreBtn:PropTypes.func.isRequired, 
+    addMoreBtn:PropTypes.func.isRequired,
+    deleteSelectedPlayer: PropTypes.func.isRequired 
 }
 
 export default SelectedPlayer;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 
-const AllPlayers = ({choosePlayerBtn,seclectedPlayer}) => {
+const AllPlayers = ({choosePlayerBtn,seclectedPlayer,deleteSelectedPlayer}) => {
  
     const [Players, setPlayers] = useState([]);
     const [conditionDisplay, setConditionDisplay] = useState(true);
@@ -66,6 +66,7 @@ const AllPlayers = ({choosePlayerBtn,seclectedPlayer}) => {
                        <SelectedPlayer  
                         seclectedPlayer={seclectedPlayer}
                         addMoreBtn={addMoreBtn}
+                        deleteSelectedPlayer={deleteSelectedPlayer}
                        ></SelectedPlayer>
                     </div>
                     }
@@ -81,6 +82,7 @@ const AllPlayers = ({choosePlayerBtn,seclectedPlayer}) => {
 AllPlayers.propTypes={
     choosePlayerBtn: PropTypes.func.isRequired ,
     seclectedPlayer: PropTypes.array.isRequired,
+    deleteSelectedPlayer: PropTypes.func.isRequired
 }
 
 export default AllPlayers;

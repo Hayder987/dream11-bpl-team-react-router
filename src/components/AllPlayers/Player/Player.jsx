@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { IoFlagSharp } from "react-icons/io5";
 
-const Player = ({eachPlayer}) => {
+const Player = ({eachPlayer,choosePlayerBtn}) => {
     const {name,logo,country,image,role,battingType,
         bowlingType,biddingPrice
     } = eachPlayer;
@@ -35,7 +35,7 @@ const Player = ({eachPlayer}) => {
                 </div>
                 <div className="flex justify-between items-center">
                     <h3 className="font-bold">Price: <span className="text-gray-500">${biddingPrice}</span></h3>
-                    <button className="font-xs border-2 py-2 focus:bg-btnBg hover:bg-gray-200 px-3 rounded-xl">Choose Player</button>
+                    <button onClick={()=>choosePlayerBtn(eachPlayer)} className="font-xs border-2 py-2 focus:bg-btnBg hover:bg-gray-200 px-3 rounded-xl">Choose Player</button>
                 </div>
             </div>
 
@@ -44,6 +44,7 @@ const Player = ({eachPlayer}) => {
 };
 
 Player.propTypes={
-    eachPlayer:PropTypes.object.isRequired 
+    eachPlayer:PropTypes.object.isRequired ,
+    choosePlayerBtn: PropTypes.func.isRequired,
 }
 export default Player;

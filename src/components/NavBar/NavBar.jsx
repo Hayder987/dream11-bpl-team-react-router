@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 const NavBar = ({coin}) => {
     return (
-        <div className="px-3 lg:px-16 bg-slate-50 backdrop-opacity-10  py-6 flex justify-between items-center">
+        <div className="px-3  backdrop-blur-md sticky top-0 right-0 lg:px-16 bg-navBg   py-6 flex justify-between items-center">
            <div className="">
               <img src={logo} alt="" className="" />
            </div>

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Player from "./Player/Player";
 import SelectedPlayer from "./SelectedPlayer/SelectedPlayer";
+import PropTypes from 'prop-types';
 
 
 
-const AllPlayers = () => {
+const AllPlayers = ({choosePlayerBtn}) => {
  
     const [Players, setPlayers] = useState([]);
     const [conditionDisplay, setConditionDisplay] = useState(true);
@@ -26,12 +27,12 @@ const AllPlayers = () => {
    }
 
     return (
-        <div className="px-3 lg:px-16">
-            <div className="flex justify-between items-center py-4">
+        <div className="px-3 lg:px-16 ">
+            <div className="flex bg-navBg backdrop-blur-md justify-between items-center sticky top-[110px] right-0  py-4">
                 <h1 className="text-base md:text-3xl font-bold">
                     {conditionDisplay?"Available Players":"Selected Player (0/6)"}
                     </h1>
-                <div className="flex gap-3">
+                <div className="flex gap-3 ">
                     <button onClick={allPlayerBtnHanderllar} 
                      className={`border py-3 px-5 rounded-xl font-bold 
                      ${conditionDisplay?"bg-btnBg":"bg-white"}`}>
@@ -52,11 +53,13 @@ const AllPlayers = () => {
                         {
                          Players.map((eachPlayer=> <Player 
                             key={eachPlayer.playerId}
-                            eachPlayer={eachPlayer}></Player>))    
+                            eachPlayer={eachPlayer}
+                            choosePlayerBtn={choosePlayerBtn}
+                            ></Player>))    
                        } 
                     </div>: 
                     <div className="">
-                       <SelectedPlayer></SelectedPlayer>
+                       <SelectedPlayer ></SelectedPlayer>
                     </div>
                     }
                     
@@ -67,5 +70,9 @@ const AllPlayers = () => {
         </div>
     );
 };
+
+AllPlayers.propTypes={
+    choosePlayerBtn: PropTypes.func.isRequired  
+}
 
 export default AllPlayers;

@@ -1,9 +1,10 @@
 
 import './banner.css';
 import bannerImg from '../../assets/banner-main.png'
+import PropTypes from 'prop-types';
 
 
-const Banner = () => {
+const Banner = ({increaseCoin}) => {
     return (
         <div className='bg-black mb-14 mx-3 lg:mx-16 mt-12 rounded-2xl'>
            <div className="bannerBg p-6 md:p-28 rounded-2xl flex flex-col justify-center items-center">
@@ -15,11 +16,16 @@ const Banner = () => {
                 Beyond Boundaries Beyond Limits
               </p>
               <div className="border border-btnBg rounded-2xl p-1">
-                <button className="font-bold bg-btnBg p-3 rounded-xl">Claim Free Credit</button>
+                <button onClick={increaseCoin} className="font-bold bg-btnBg p-3 rounded-xl">Claim Free Credit</button>
               </div>
            </div> 
         </div>
     );
 };
+
+Banner.propTypes={
+  increaseCoin:PropTypes.func.isRequired
+}
+
 
 export default Banner;

@@ -2,9 +2,10 @@
 import logo from '../../assets/logo.png'
 import { AiFillDollarCircle } from "react-icons/ai";
 import { FaBarsStaggered } from "react-icons/fa6";
+import PropTypes from 'prop-types'; 
 
 
-const NavBar = () => {
+const NavBar = ({coin}) => {
     return (
         <div className="px-3 lg:px-16 bg-slate-50 backdrop-opacity-10  py-6 flex justify-between items-center">
            <div className="">
@@ -21,7 +22,7 @@ const NavBar = () => {
               <p className="text-xl"><FaBarsStaggered /></p>
             </div>
             <div className="flex border-2 p-3 rounded-xl justify-center items-center gap-2 font-semibold">
-                <span>0</span>
+                <span>{coin}</span>
                 <span>Coin</span>
                 <span className='text-amber-500 text-xl'><AiFillDollarCircle /></span>
             </div>
@@ -29,5 +30,10 @@ const NavBar = () => {
         </div>
     );
 };
+
+NavBar.propTypes={
+    coin:PropTypes.number.isRequired 
+}
+
 
 export default NavBar;

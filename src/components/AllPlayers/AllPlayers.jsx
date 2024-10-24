@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 
-const AllPlayers = ({choosePlayerBtn}) => {
+const AllPlayers = ({choosePlayerBtn,seclectedPlayer}) => {
  
     const [Players, setPlayers] = useState([]);
     const [conditionDisplay, setConditionDisplay] = useState(true);
@@ -30,7 +30,7 @@ const AllPlayers = ({choosePlayerBtn}) => {
         <div className="px-3 lg:px-16 ">
             <div className="flex bg-navBg backdrop-blur-md justify-between items-center sticky top-[110px] right-0  py-4">
                 <h1 className="text-base md:text-3xl font-bold">
-                    {conditionDisplay?"Available Players":"Selected Player (0/6)"}
+                    {conditionDisplay?`Available Players`:`Selected Player (${seclectedPlayer.length}/6)`}
                     </h1>
                 <div className="flex gap-3 ">
                     <button onClick={allPlayerBtnHanderllar} 
@@ -41,7 +41,7 @@ const AllPlayers = ({choosePlayerBtn}) => {
                     <button onClick={selectPlayerBtnHanderllar}
                          className={`border py-3 px-5 rounded-xl font-bold 
                          ${!conditionDisplay?"bg-btnBg":"bg-white"}`}>
-                          Selected (0)
+                          Selected ({seclectedPlayer.length})
                     </button>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const AllPlayers = ({choosePlayerBtn}) => {
                        } 
                     </div>: 
                     <div className="">
-                       <SelectedPlayer ></SelectedPlayer>
+                       <SelectedPlayer  ></SelectedPlayer>
                     </div>
                     }
                     
@@ -72,7 +72,8 @@ const AllPlayers = ({choosePlayerBtn}) => {
 };
 
 AllPlayers.propTypes={
-    choosePlayerBtn: PropTypes.func.isRequired  
+    choosePlayerBtn: PropTypes.func.isRequired ,
+    seclectedPlayer: PropTypes.array.isRequired,
 }
 
 export default AllPlayers;

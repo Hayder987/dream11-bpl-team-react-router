@@ -17,8 +17,29 @@ const increaseCoin =()=>{
 };
 
 const choosePlayerBtn=(item)=>{
-  console.log(item) 
-}
+  const isInclude = seclectedPlayer.find((x=> x.playerId === item.playerId));
+  if(seclectedPlayer.length>3){
+    toast.error("maximum player added")
+    return
+  }
+
+  if(item.biddingPrice>coin) {
+    toast.error("Insufficient-Balance You Need To More Money")
+  }
+  else{
+    if(isInclude){
+      toast.error("Player Already Selected")
+    }
+    else{
+      toast.success(`${item.name} Selected SuccessFully!`)
+      setSelectedPlayer([...seclectedPlayer,item])
+      setCoin(coin-item.biddingPrice)
+    }
+    
+  }
+};
+
+console.log(seclectedPlayer)
 
   return (
     <>
@@ -26,7 +47,8 @@ const choosePlayerBtn=(item)=>{
          <NavBar coin={coin}></NavBar>
          <Banner increaseCoin={increaseCoin}></Banner>
          <AllPlayers
-         choosePlayerBtn={choosePlayerBtn}
+          choosePlayerBtn={choosePlayerBtn}
+          seclectedPlayer={seclectedPlayer}
          ></AllPlayers>
    
    
@@ -37,7 +59,7 @@ const choosePlayerBtn=(item)=>{
           closeOnClick
           pauseOnHover
           draggable
-          toastClassName="my-custom-toast"
+          toastClassName="custom-toast"
          />
       </div>
     </>

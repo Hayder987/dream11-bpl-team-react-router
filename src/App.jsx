@@ -6,6 +6,7 @@ import Banner from './components/Banner/Banner'
 import NavBar from './components/NavBar/NavBar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './components/Footer/Footer'
 
 function App() {
 const [coin, setCoin] = useState(0);
@@ -51,8 +52,6 @@ const deleteSelectedPlayer=(selectPlayer)=>{
   setSelectedPlayer(reminingSelectedPlayer);
 }
 
-
-
   return (
     <>
       <div className="">
@@ -63,7 +62,7 @@ const deleteSelectedPlayer=(selectPlayer)=>{
           seclectedPlayer={seclectedPlayer}
           deleteSelectedPlayer={deleteSelectedPlayer}
          ></AllPlayers>
-   
+         <Footer></Footer>
    
          <ToastContainer
           position="top-right"

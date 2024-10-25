@@ -15,8 +15,8 @@ const Banner = ({increaseCoin}) => {
               <p className="text-xl mb-6 md:text-2xl font-medium text-gray-400">
                 Beyond Boundaries Beyond Limits
               </p>
-              <div className="border border-btnBg rounded-2xl p-1">
-                <button onClick={increaseCoin} className="font-bold bg-btnBg p-3 rounded-xl">Claim Free Credit</button>
+              <div className="border border-gray-300 rounded-2xl p-1">
+                <button onClick={increaseCoin} className="font-bold bg-gradient-to-r from-pink-400 to-yellow-500 p-3 rounded-xl">Claim Free Credit</button>
               </div>
            </div> 
         </div>

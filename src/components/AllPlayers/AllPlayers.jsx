@@ -31,19 +31,19 @@ const AllPlayers = ({choosePlayerBtn,seclectedPlayer,deleteSelectedPlayer}) => {
    }
 
     return (
-        <div className="px-3 lg:px-16 ">
+        <div className="px-3 lg:px-16 mb-60">
             <div className="flex bg-navBg backdrop-blur-md justify-between items-center sticky top-[110px] right-0  py-4">
-                <h1 className="text-base md:text-3xl font-bold">
+                <h1 className="text-sm md:text-3xl font-bold">
                     {conditionDisplay?`Available Players`:`Selected Player (${seclectedPlayer.length}/6)`}
                     </h1>
                 <div className="flex gap-3 ">
                     <button onClick={allPlayerBtnHanderllar} 
-                     className={`border py-3 px-5 rounded-xl font-bold 
+                     className={`border py-3 px-5 text-xs md:text-base rounded-xl font-bold 
                      ${conditionDisplay?"bg-btnBg":"bg-white"}`}>
                         Available
                     </button>
                     <button onClick={selectPlayerBtnHanderllar}
-                         className={`border py-3 px-5 rounded-xl font-bold 
+                         className={`border py-3 px-5 text-xs md:text-base rounded-xl font-bold 
                          ${!conditionDisplay?"bg-btnBg":"bg-white"}`}>
                           Selected ({seclectedPlayer.length})
                     </button>

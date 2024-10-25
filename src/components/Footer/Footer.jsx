@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="relative bg-footerBg">
            <div className=" p-4 pt-48  lg:p-28" >
              {/* Div-top */}
-             <div className="bg-footerBg2 absolute z-10 top-1/2 left-1/2 transform -translate-y-[200%] md:-translate-y-[220%] lg:-translate-y-[140%] -translate-x-1/2 w-11/12 md:w-10/12  p-4 md:p-6 border-2 border-white rounded-2xl">
+             <div className="bg-footerBg2 absolute z-10 top-1/2 left-1/2 transform -translate-y-[210%] md:-translate-y-[230%] lg:-translate-y-[155%] -translate-x-1/2 w-11/12 md:w-10/12  p-4 md:p-6 border-2 border-white rounded-2xl">
                <div className="bg-white rounded-xl ">
                  <div className="news-Letter-bg p-6 lg:p-20 rounded-xl flex flex-col justify-center items-center">
                    <h1 className="text-3xl text-center font-bold mb-6 ">Subscribe to our Newsletter</h1>
@@ -25,7 +25,7 @@ const Footer = () => {
               <div className="flex justify-center items-center ">
                 <img src={footerLogo} alt="" className="mb-6" />
               </div>
-              <div className="p-4 md:p-16 grid gap-8  grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              <div className="p-4 md:p-16 grid gap-8 border-b border-gray-400  grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <div className="">
                   <h3 className="text-white mb-3 text-xl font-semibold">About Us</h3>
                   <p className="text-gray-400 w-full md:w-3/6">We are a passionate team dedicated to providing the
@@ -53,6 +53,9 @@ const Footer = () => {
                  </div>
 
                 </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-400 text-center"> @2024 HDR-Coding All Rights Reserved.</p>
               </div>
             </div>
         </div>

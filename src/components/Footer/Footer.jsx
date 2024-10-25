@@ -47,7 +47,7 @@ const Footer = () => {
                      Subscribe to our newsletter for the latest updates.
                    </p>
                    <div className="flex">
-                     <input type="text" placeholder="Enter your email" className=" input-bordered rounded-tl-xl rounded-bl-xl w-full max-w-xs" />
+                     <input type="text" placeholder="Enter your email" className=" input-bordered px-4 rounded-tl-xl rounded-bl-xl w-full max-w-xs" />
                      <button className="p-3 font-bold rounded-tr-xl rounded-br-xl px-4 bg-gradient-to-r from-pink-400 to-yellow-500">Subscribe</button>
                    </div>
                  </div>
